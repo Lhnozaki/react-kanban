@@ -33,6 +33,7 @@ app.use(cookieParser());
 app.engine(".hbs", exphbs({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 app.use(methodOverride("_method"));
+app.use(decorator);
 
 //Sessions
 app.use(
@@ -47,6 +48,11 @@ app.use(
 //Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+// routes
+app.get("/api/smoke", (req, res) => {
+  res.json({ smoke: "test" });
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

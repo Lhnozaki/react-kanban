@@ -12,7 +12,7 @@ exports.up = function(knex) {
       .references("statuses.id")
       .notNullable();
     table
-      .integer("create_by")
+      .integer("created_by")
       .references("users.id")
       .notNullable();
     table.integer("assigned_to").references("users.id");

@@ -18,11 +18,11 @@ class Card extends bookshelf.Model {
   }
 
   priorities() {
-    return this.belongsTo("Priority", "priority_id");
+    return this.belongsTo("Priority");
   }
 
   statuses() {
-    return this.belongsTo("Status", "status_id");
+    return this.belongsTo("Status");
   }
 }
 
